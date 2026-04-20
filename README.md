@@ -29,15 +29,15 @@ Use one of these values: `Not started`, `In progress`, `Done`
 
 Write 3 to 5 short lines about what you have already done.
 
-- Accepted the classroom invitation
-- Completed the README.md updates
-- Started looking at APIs to use from the ones in the PDF.
+- Did my first commit and push
+- Chose the API from BlockStream
+- Implemented the script into blockchain_client.py with some theoric annotations
 
 ## Next Step
 
 Write the next small step you will do before the next class.
 
-- Start with M1, clone the repo into VSCode and start using the API to generate data
+- Start with M1, represent the first data using the dashboard
 
 ## Main Problem or Blocker
 

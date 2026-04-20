@@ -1,37 +1,18 @@
-"""
-Blockchain API client.
-
-Provides helper functions to fetch blockchain data from public APIs.
-"""
-
 import requests
 
-BASE_URL = "https://blockchain.info"
+url = "https://blockstream.info/api/blocks/tip/hash"
+tip = requests.get(url).text.strip()
 
+url = "https://blockstream.info/api/block/" + tip
+response = requests.get(url)
+data = response.json()
 
-def get_latest_block() -> dict:
-    """Return the latest block summary."""
-    response = requests.get(f"{BASE_URL}/latestblock", timeout=10)
-    response.raise_for_status()
-    return response.json()
+print(f"Height:       {data['height']}")
+print(f"Hash:         {data['id']}")
+print(f"Difficulty:   {data['difficulty']}")
+print(f"Nonce:        {data['nonce']}")
+print(f"Transactions: {data['tx_count']}")
 
-
-def get_block(block_hash: str) -> dict:
-    """Return full details for a block identified by *block_hash*."""
-    response = requests.get(
-        f"{BASE_URL}/rawblock/{block_hash}", timeout=10
-    )
-    response.raise_for_status()
-    return response.json()
-
-
-def get_difficulty_history(n_points: int = 100) -> list[dict]:
-    """Return the last *n_points* difficulty values as a list of dicts."""
-    response = requests.get(
-        f"{BASE_URL}/charts/difficulty",
-        params={"timespan": "1year", "format": "json", "sampled": "true"},
-        timeout=10,
-    )
-    response.raise_for_status()
-    data = response.json()
-    return data.get("values", [])[-n_points:]
+# The block hash must be lower than a target value defined by the difficulty established by the network. Valid hashes start with a certain number of zeros.
+# The bigger the amount of zeros, the smaller the hash target. This leads to a higher difficulty, requiring more computational power to find a valid hash.
+# The difficulty is adjusted every 2016 blocks to keep the average block time close to 600 seconds (10 minutes)
