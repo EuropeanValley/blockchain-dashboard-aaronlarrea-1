@@ -9,10 +9,10 @@ Update this README every week.
 
 | Field | Value |
 |---|---|
-| Student Name | |
-| GitHub Username | |
-| Project Title | |
-| Chosen AI Approach | |
+| Student Name | Aarón Larrea |
+| GitHub Username | aaronlarrea |
+| Project Title | Real Time Bitcoin Cryptographic Dasboard  |
+| Chosen AI Approach | M4 — Anomaly Detector: identify blocks with statistically abnormal inter-arrival times using an exponential distribution baseline.|
 
 ## Module Tracking
 
@@ -20,7 +20,7 @@ Use one of these values: `Not started`, `In progress`, `Done`
 
 | Module | What it should include | Status |
 |---|---|---|
-| M1 | Proof of Work Monitor | Not started |
+| M1 | Proof of Work Monitor | In progress |
 | M2 | Block Header Analyzer | Not started |
 | M3 | Difficulty History | Not started |
 | M4 | AI Component | Not started |
@@ -29,15 +29,15 @@ Use one of these values: `Not started`, `In progress`, `Done`
 
 Write 3 to 5 short lines about what you have already done.
 
-- 
-- 
-- 
+- Accepted the classroom invitation
+- Completed the README.md updates
+- Started looking at APIs to use from the ones in the PDF.
 
 ## Next Step
 
 Write the next small step you will do before the next class.
 
-- 
+- Start with M1, clone the repo into VSCode and start using the API to generate data
 
 ## Main Problem or Blocker
 
